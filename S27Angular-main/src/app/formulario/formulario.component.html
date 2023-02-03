@@ -1,0 +1,35 @@
+<h2 class="text-center">Reto y actividad Asincrona</h2>
+
+<section class="container-fluid m-4">
+    <section>
+        <mat-form-field class="example-full-width">
+            <br>
+            <mat-label>Ingrese el primer valor</mat-label>
+            <input type="number" matInput [(ngModel)]="num1">
+        </mat-form-field>
+    </section>
+    
+    <section>
+        <mat-form-field class="example-full-width">
+            <br>
+            <mat-label>Ingrese el segundo valor</mat-label>
+            <input type="number" matInput [(ngModel)]="num2" >
+        </mat-form-field>
+    </section>
+    
+    <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle> <p>Sumar</p>
+    <mat-slide-toggle [(ngModel)]="isChecked2"></mat-slide-toggle> <p>Restar</p>
+    <mat-slide-toggle [(ngModel)]="isChecked3"></mat-slide-toggle> <p>Multiplicar</p>
+    <mat-slide-toggle [(ngModel)]="isChecked4"></mat-slide-toggle> <p>Dividir</p>
+    
+    <button class="btn btn-primary" id="btnEnviar" (click)="boton()">Calcular</button>
+    <button class="btn btn-secondary ms-2" (click)="limpiar()">Limpiar</button>
+    
+    <section *ngIf="mostrar" class="mt-3">
+    <p *ngIf="isChecked"> <span style="font-weight: bold;">La suma es: </span>{{num1+num2}}</p>
+    <p *ngIf="isChecked2"> <span style="font-weight: bold;">La resta es:</span> {{num1-num2}}</p>
+    <p *ngIf="isChecked3"> <span style="font-weight: bold;">La multiplicación es: </span> {{num1*num2}}</p>
+    <p *ngIf="isChecked4"> <span style="font-weight: bold;">La división es: </span> {{num1/num2}}</p>
+    </section>
+    </section>
+
